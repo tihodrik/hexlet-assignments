@@ -1,0 +1,17 @@
+bulletin_1:
+  id: 1
+  title: 'Similique facilis placeat est.'
+  body: 'Nisi ad quo. Et magnam culpa. Voluptatem magnam magni.'
+  published: true
+
+bulletin_2:
+  id: 2
+  title: 'Rerum saepe et laborum.'
+  body: 'Quae eum magni. Est temporibus aspernatur. Ullam repellendus dignissimos.'
+  published: true
+
+bulletin_3:
+  id: 3
+  title: 'Non et aliquid illum.'
+  body: 'Quasi aut sit. Omnis voluptatibus eveniet. A quia odio.'
+  published: false
