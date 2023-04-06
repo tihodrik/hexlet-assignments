@@ -1,0 +1,7 @@
+<h1>Tasks List</h1>
+<p><i><%= link_to 'Create task', new_task_path %></i></p>
+<ol>
+  <% @tasks.each do |task| %>
+    <li><%= link_to task.name, task_path(task) %> | <%= task.created_at.in_time_zone('Moscow').strftime("%H:%m %d.%m.%y") %></li>
+  <% end %>
+</ol>

@@ -1,0 +1,9 @@
+<h1><%= @task.name %> <%= "[#{@task.status.capitalize}]" %> </h1>
+<p><strong>Creator:</strong> <%= "#{@task.creator}" %></p>
+<% unless @task.performer.nil? %>
+  <p><strong>Performer:</strong> <%= @task.performer %></p>
+<% end %>
+<p><i><%= @task.description %></i></p>
+<hr/>
+<%= link_to 'Edit', edit_task_path %>
+<%= link_to 'Delete', task_path, method: :delete, data: { confirm: "Are you sure? Task: #{@task.name}" } %>
