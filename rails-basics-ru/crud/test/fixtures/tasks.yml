@@ -1,18 +1,3 @@
-# == Schema Information
-#
-# Table name: tasks
-#
-#  id          :integer          not null, primary key
-#  completed   :boolean          default(FALSE), not null
-#  creator     :string           not null
-#  description :text
-#  name        :string           not null
-#  performer   :string
-#  status      :string           default("new"), not null
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#
-
 valid_task:
   name: MyString
   description: MyText
