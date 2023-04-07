@@ -1,4 +1,4 @@
-valid_task:
+task1:
   name: MyString
   description: MyText
   status: MyString

@@ -3,41 +3,62 @@
 require 'test_helper'
 
 class TasksControllerTest < ActionDispatch::IntegrationTest
-  test 'it opens index' do
-    get tasks_url
+  def setup
+    @task = tasks(:task1)
+    @attrs = {
+      name: 'Add to group',
+      description: 'Add user Malva Velkran to group of Facebook users',
+      creator: 'Rikki Milk',
+      performer: 'Monty Glow'
+    }
+  end
+  test 'should get index' do
+    get root_path
     assert_response :success
   end
 
-  test 'it checks task validation' do
-    assert_equal tasks(:valid_task).valid?, true
-
-    invalid_task = Task.new(
-      name: 'Name',
-      status: 'new',
-      description: 'New Task',
-      creator: '',
-      performer: '',
-      completed: true
-    )
-    assert_equal invalid_task.valid?, false
+  test 'should get new' do
+    get new_task_path
+    assert_response :success
   end
 
-  test 'it can read task description' do
-    assert_equal tasks(:valid_task), Task.find_by(id: tasks(:valid_task).id)
+  test 'should create task' do
+    assert_difference('Task.count') do
+      post tasks_path, params: {
+        task: @attrs
+      }
+    end
+    assert_redirected_to task_path(Task.last)
+
+    get task_path(Task.last)
+    assert_select 'h1', "#{@attrs[:name]} [New]"
   end
 
-  test 'it can update records' do
-    Task.first.update(name: 'Updated Task')
-    assert_equal Task.first.name, 'Updated Task'
+  test 'should show task' do
+    get task_path(@task)
+    assert_response :success
   end
 
-  test 'it can destroy records' do
-    initial_count = Task.count
-    task_id = Task.first.id
+  test 'should get edit' do
+    get edit_task_path(@task)
+    assert_response :success
+  end
 
-    Task.first.destroy
+  test 'should update task' do
+    patch task_path(@task), params: {
+      task: @attrs
+    }
+    assert_redirected_to task_path(Task.last)
 
-    assert_equal Task.count, initial_count - 1
-    assert_nil Task.find_by(id: task_id)
+    @task.reload
+    assert_equal @task.name, @attrs[:name]
+  end
+
+  test 'should destroy task' do
+    assert_difference('Task.count', -1) do
+      delete task_path(Task.last)
+    end
+
+    assert_redirected_to tasks_path
   end
 end
