@@ -1,0 +1,18 @@
+h1
+  | #{@task.name}
+  i: small< #{@task.status.capitalize}
+
+p
+  strong Creator:
+  |< #{@task.creator}
+
+- unless @task.performer.nil?
+  p
+    strong Performer:
+    |< #{@task.performer}
+    
+p: i= @task.description
+hr/
+p
+  | #{link_to 'Edit', edit_task_path}
+  |< #{link_to 'Delete', task_path, method: :delete, data: { confirm: "Are you sure? Task: #{@task.name}" } }

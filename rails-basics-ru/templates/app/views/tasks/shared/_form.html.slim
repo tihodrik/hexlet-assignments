@@ -1,0 +1,26 @@
+= form_with model: task do |form|
+  strong: p= form.label :name
+  p
+   = form.text_area :name, size: "60x1"
+    - if @task.errors.full_messages_for(:name).any?
+      small: i= @task.errors.full_messages_for(:name).join(', ')
+
+  strong: p= form.label :description
+  p
+    = form.text_area :description, size: "60x10"
+    - if @task.errors.full_messages_for(:description).any?
+      small: i= @task.errors.full_messages_for(:description).join(', ')
+
+  strong: p= form.label :creator
+  p
+    = form.text_area :creator, size: "60x1"
+    - if @task.errors.full_messages_for(:creator).any?
+      small: i= @task.errors.full_messages_for(:creator).join(', ')
+
+  strong: p= form.label :performer
+  p
+  = form.text_area :performer, size: "60x1"
+  - if @task.errors.full_messages_for(:performer).any?
+    small: i= @task.errors.full_messages_for(:performer).join(', ')
+  
+  p= form.submit

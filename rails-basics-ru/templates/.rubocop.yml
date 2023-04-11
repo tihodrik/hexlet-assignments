@@ -1,0 +1,17 @@
+require: rubocop-rails
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'bin/**'
+    - 'db/schema.rb'
+    - 'db/migrate/**'
+    - 'examples/**'
+    - 'examples/**/**/**'
+    - 'lib/tasks/**'
+
+Style/SymbolArray:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
