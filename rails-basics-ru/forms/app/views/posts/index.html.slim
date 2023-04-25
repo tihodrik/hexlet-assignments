@@ -1,0 +1,8 @@
+h1 Posts Desk
+button #{link_to 'Create post', new_post_path}
+p
+  |
+
+ul
+  - @posts.each do |post|
+    | <li> #{link_to post.title, post_path(post)} <i><small>(#{post.created_at.in_time_zone('Moscow').strftime("%H:%m %d.%m.%y")})</small></i></li>

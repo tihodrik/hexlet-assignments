@@ -1,0 +1,13 @@
+h2
+  | #{@post.title}
+  - if @post.published
+  |< <small>[Published]</small>
+
+p #{@post.body}
+
+hr
+p
+  <em><small>Last Update: #{@post.updated_at.in_time_zone('Moscow').strftime("%H:%m %d.%m.%y")}</small></em>
+p
+  | #{link_to 'Edit', edit_post_path}
+  |< #{link_to 'Delete', post_path(@post), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } }
