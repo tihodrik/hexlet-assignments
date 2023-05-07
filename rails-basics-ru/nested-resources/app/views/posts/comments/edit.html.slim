@@ -1,0 +1,7 @@
+h1 Edit comment for post <i>"#{@comment.post.title}"</i>
+
+== render 'form', comment: @comment, url: @url
+
+hr
+
+= link_to 'Back', :back, class: 'btn btn-outline-primary'

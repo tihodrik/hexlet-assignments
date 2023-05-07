@@ -1,0 +1,34 @@
+- content_for :title do
+  = @post.title
+p
+  strong.me-2 Body:
+  = @post.body
+  hr
+/ BEGIN
+- unless @post.comments.any?
+  p No comments yet
+
+- @post.comments.each do |comment|
+  p
+    strong.me-2 #{comment.author.upcase}
+    em
+      |> (at
+      = comment.updated_at.in_time_zone('Moscow').to_formatted_s(:long)
+      | ):
+    br
+    = comment.body
+    br
+    = link_to 'Edit', edit_comment_path(comment)
+    |<
+    = link_to 'Delete', comment_path(comment), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }
+
+p
+  strong.me-2 New Comment:
+== render 'posts/comments/form', comment: @post.comments.build, url: post_comments_path(@post)
+
+/ END
+hr
+
+.d-flex
+  = link_to 'Edit', edit_post_path(@post), class: 'btn btn-outline-primary me-2'
+  = link_to 'Back', :back, class: 'btn btn-outline-primary'
