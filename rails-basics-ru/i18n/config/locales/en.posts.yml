@@ -1,0 +1,38 @@
+en:
+  posts:
+    title: Title
+    header: Posts
+
+    new:
+      new_post: New Post
+
+    edit:
+      title: Edit post
+    
+    create:
+      success: Post was created.
+
+    update:
+      success: Post was updated.
+    
+    destroy:
+      success: Post was destroyed.
+    
+    show:
+      body: Post body
+      comments: Comments
+
+    comments:
+      zero: No comments
+      one: comment
+      other: comments
+
+      edit:
+        title: Edit comment
+
+      create:
+        success: Comment was created.
+
+      update:
+        success: Comment was updated.
+

@@ -1,0 +1,16 @@
+ru:
+  show: Просмотр
+  edit: Изменить
+  destroy: Удалить
+  destroy_confirmation: Вы уверены?
+  back: Назад
+  home: Домашняя страница
+  navigation:
+    home: Домой
+  layouts:
+    application:
+      hexlet_title: "Хекслет, %{year}"
+      project_title: Проект I18n
+    shared:
+      nav:
+        hexlet_logo: Логотип Хекслета

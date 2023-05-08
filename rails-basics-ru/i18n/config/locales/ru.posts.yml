@@ -1,0 +1,39 @@
+---
+ru:
+  posts:
+    title: Заголовок
+    header: Посты
+
+    new:
+      new_post: Новый пост
+
+    edit:
+      title: Редактировать пост
+
+    create:
+      success: Пост создан.
+
+    update:
+      success: Пост обновлен.
+    
+    destroy:
+      success: Пост удален.
+
+    show:
+      body: Текст поста
+      comments: Комментарии
+
+    comments:
+      zero: Нет комментариев
+      one: комментарий
+      few: комментария
+      many: комментариев
+
+      edit:
+        title: Изменить комментарий
+
+      create:
+        success: Комментарий создан.
+
+      update:
+        success: Комментарий обновлен.
