@@ -10,8 +10,9 @@ ru:
       default_message: "Пожалуйста, исправьте ошибки:"
     placeholders:
       # BEGIN
-      posts:
+      post:
         title: Название
+        body: Текст
       # END
       post_comment:
         body: Текст

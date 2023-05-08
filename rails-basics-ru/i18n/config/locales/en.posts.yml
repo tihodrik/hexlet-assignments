@@ -25,6 +25,8 @@ en:
     comments:
       zero: No comments
       one: comment
+      few: comments
+      many: comments
       other: comments
 
       edit:
